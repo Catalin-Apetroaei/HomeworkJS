@@ -6,7 +6,9 @@
 const localitate = prompt("Localitate");
 const cilindree = Number(prompt("Capacitatea cilindrica"));
 const hibrid = prompt("Este hibrid? : da/nu");
-const vehicul = prompt("Ce tip de vehicul este?");
+const vehicul = prompt(
+  "Ce tip de vehicul este?\n1: Autoturism\n 2: Motocicleta \n 3: Autobuz\n 4: Camion \n"
+);
 console.log(localitate, cilindree);
 const calcImpozit = function (loc, cil, imp) {
   console.log(
