@@ -15,9 +15,7 @@ const secondSentence = `Andrei are un salariu de 1000 euro/luna, un bonus de 900
 //     const num = function (val) {
 //       return /[0-9]/.test(val);
 //     };
-//     // console.log(num(valoare));
 //     if (num(valoare)) {
-//       //   console.log(valoare);
 //       total = total + Number(valoare);
 //     }
 //   }
@@ -27,24 +25,29 @@ const secondSentence = `Andrei are un salariu de 1000 euro/luna, un bonus de 900
 
 // console.log(venitAnual(firstSentence));
 // console.log(venitAnual(secondSentence));
+const cursEuro = 4.96;
+const cursUsd = 4.64;
+const luniAn = 12;
 const venit = function (sentence) {
   const arr = sentence.split(" ");
   let venitAnual = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === "lei/luna") {
-      venitAnual += Number(arr[i - 1]) * 12;
+      venitAnual += Number(arr[i - 1]) * luniAn;
     }
     if (arr[i] === "lei/an") {
       venitAnual += Number(arr[i - 1]);
     }
-    if (arr[i] === "euro/luna") {
-      venitAnual += Number(arr[i - 1]) * 4.96;
+    if (arr[i] === "euro/luna,") {
+      venitAnual += Number(arr[i - 1]) * cursEuro * luniAn;
     }
     if (arr[i] === "usd/luna") {
-      venitAnual += Number(arr[i - 1]) * 4.64;
+      venitAnual += Number(arr[i - 1]) * cursUsd * luniAn;
     }
   }
-  console.log(venitAnual);
+  console.log(
+    `Venitul total anual al lui ${arr[0]} este de ${venitAnual} lei.`
+  );
 };
 venit(firstSentence);
 venit(secondSentence);
