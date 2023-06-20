@@ -32,14 +32,16 @@ li:last-of-type {
 }
 li button {
   width: 20px;
-  background-color: blue;
+  background-color: red;
   margin-left: 350px;
 }
 li input {
-  background-color: red;
   width: 20px;
 }
 .sections {
   font-size: 30px;
   font-weight: bold;
+}
+.sections2 {
+  float: right;
 }
